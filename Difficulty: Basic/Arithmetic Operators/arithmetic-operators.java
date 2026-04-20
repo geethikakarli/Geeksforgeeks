@@ -1,12 +1,22 @@
+// User function Template for Java
+import java.util.*;
 class Solution {
-    public int[] computeOperations(int x, int y) {
-        
-         int p = x + y;
-         int  q = x-y;
-         int r= x*y;
-         int s = x/y;
-         int t = x%y;
-        return new int[]{p,q,r,s,t};
+
+    public static void operations(int x, int y) {
+        Scanner scanner = new Scanner(System.in);
+        // Perform addition x+y below
+        int p = x+y;
+            // Perform subtraction x-y below
+            int q = x-y;
+                // Perform multiplication x*y below
+            int r = x*y;
+            
+                // Perform division x/y below
+            int s = x/y;
+                // Perform modulo operation x%y below
+            int t = x%y;
+
+                // The below code prints the output. Don't change it!
+            System.out.println(p + " " + q + " " + r + " " + s + " " + t);
     }
 }
-
