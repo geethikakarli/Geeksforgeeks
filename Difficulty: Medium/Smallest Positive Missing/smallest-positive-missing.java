@@ -1,21 +1,17 @@
+import java.util.Arrays;
 class Solution {
-    public int missingNumber(int[] arr) {
+    static int missingNumber(int[] arr) {
         int n = arr.length;
-
-        
-        for (int i = 0; i < n; i++) {
-            while (arr[i] > 0 && arr[i] <= n && arr[arr[i] - 1] != arr[i]) {
-                int temp = arr[i];
-                arr[i] = arr[temp - 1];
-                arr[temp - 1] = temp;
+        boolean[] vis = new boolean[n];
+        for (int i = 0; i<n; i++) {
+            if (arr[i] >0 && arr[i]<=n)
+                vis[arr[i]-1] = true;
             }
-        }
-        for (int i = 0; i < n; i++) {
-            if (arr[i] != i + 1) {
-                return i + 1;
+            for (int i=1;i<=n;i++) {
+                if(!vis[i-1]) {
+                    return i;
+                }
             }
+            return n+1;
         }
-
-        return n + 1;
-    }
 }
